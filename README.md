@@ -9,9 +9,9 @@ Este script baixa os arquivos no diretório atual. Você poderia mudar isso.
 
 # Atualmente o repositorio conta com duas configurações, sendo elas:
 
-* Docker compose contendo Nextcloud, Nginx-fpm e Postgres.
+* Docker compose contendo, Nextcloud, Nginx-fpm e Postgres.
 
-* Docker composo contendo Nextcloud, Nginx Proxy Manager e MariaDB.
+* Docker compose contendo, Nextcloud, Nginx Proxy Manager e MariaDB.
 
 Quaisquer sugestões e contribuições são bem-vindas.
 
