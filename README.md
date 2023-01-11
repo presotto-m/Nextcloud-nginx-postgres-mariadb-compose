@@ -7,7 +7,7 @@ Docker compose para instalação de container's com Nextcloud, nginx como proxy 
 
 Este script baixa os arquivos no diretório atual. Você poderia mudar isso.
 
-# Atualmente o repositorio conta com duas configurações contendo duas opções de banco de dados.
+Atualmente o repositorio conta com duas configurações contendo duas opções de banco de dados.
 
 Quaisquer sugestões e contribuições são bem-vindas.
 
