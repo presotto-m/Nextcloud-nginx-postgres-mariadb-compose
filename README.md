@@ -7,7 +7,11 @@ Docker compose para instalação de container's com Nextcloud, nginx como proxy 
 
 Este script baixa os arquivos no diretório atual. Você poderia mudar isso.
 
-Atualmente o repositorio conta com duas configurações contendo duas opções de banco de dados.
+# Atualmente o repositorio conta com duas configurações, sendo elas:
+
+* Docker compose contendo Nextcloud, Nginx-fpm e Postgres.
+
+* Docker composo contendo Nextcloud, Nginx Proxy Manager e MariaDB.
 
 Quaisquer sugestões e contribuições são bem-vindas.
 
