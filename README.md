@@ -36,5 +36,5 @@ A instalação completa instalará o seguinte:
 
 * Basta criar um usuario e senha no momento do login, exemplo: User (Admin) senha (Admin)
 
-# Acesso banco de dados de acordo com a config disponibilizada no docker-compose
+# Acesso banco de dados de acordo com a config disponibilizada no Docker compose qual recomando a alteração das mesmas
 
