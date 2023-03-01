@@ -60,4 +60,4 @@ services:
       - MYSQL_USER=npm
       - MYSQL_PASSWORD=replace-with-secure-password
     volumes:
-    - ./var/lib/mysql
+      - db:/var/lib/mysql
