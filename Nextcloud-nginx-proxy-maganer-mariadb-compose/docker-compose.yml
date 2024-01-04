@@ -11,29 +11,28 @@ services:
     image: mariadb
     restart: always
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
-
     volumes:
       - db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=Bund7zXeVz7YnFknLGcnUjHtk #Mude isso
-      - MYSQL_PASSWORD=HFdMe9rn5kf7A8Pqc8v86Pre5 #Mude isso
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
+      MYSQL_ROOT_PASSWORD: Bund7zXeVz7YnFknLGcnUjHtk
+      MYSQL_PASSWORD: HFdMe9rn5kf7A8Pqc8v86Pre5
+      MYSQL_DATABASE: nextcloud
+      MYSQL_USER: nextcloud
 
   app:
     image: nextcloud
     restart: always
     ports:
-      - 8888:80
+      - "8888:80"
     links:
       - db
     volumes:
       - nextcloud:/var/www/html
     environment:
-      - MYSQL_PASSWORD=HFdMe9rn5kf7A8Pqc8v86Pre5  #Mude isso to para ficar igual ao: mysql_password
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_HOST=db
+      MYSQL_PASSWORD: HFdMe9rn5kf7A8Pqc8v86Pre5
+      MYSQL_DATABASE: nextcloud
+      MYSQL_USER: nextcloud
+      MYSQL_HOST: db
 
   npm-app:
     image: 'jc21/nginx-proxy-manager:latest'
@@ -46,18 +45,19 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     environment:
-      - DB_MYSQL_HOST=npm-db
-      - DB_MYSQL_PORT=3306
-      - DB_MYSQL_USER=npm
-      - DB_MYSQL_PASSWORD=replace-with-secure-password
-      - DB_MYSQL_NAME=npm
+      DB_MYSQL_HOST: npm-db
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: npm
+      DB_MYSQL_PASSWORD: replace-with-secure-password
+      DB_MYSQL_NAME: npm
+
   npm-db:
     image: jc21/mariadb-aria:latest
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=replace-with-secure-password
-      - MYSQL_DATABASE=npm
-      - MYSQL_USER=npm
-      - MYSQL_PASSWORD=replace-with-secure-password
+      MYSQL_ROOT_PASSWORD: replace-with-secure-password
+      MYSQL_DATABASE: npm
+      MYSQL_USER: npm
+      MYSQL_PASSWORD: replace-with-secure-password
     volumes:
-      - db:/var/lib/mysql
+      - npm-db:/var/lib/mysql
